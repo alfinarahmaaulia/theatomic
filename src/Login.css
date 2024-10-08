@@ -1,0 +1,117 @@
+/* Login.css */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://griffithobservatory.org/wp-content/uploads/2021/12/moon_phases_no_text-1600x800.jpg'); /* Menambahkan gambar background */
+    background-size: cover; /* Mengatur ukuran background agar menutupi seluruh area */
+    background-position: center; /* Memposisikan gambar di tengah */
+}
+
+.login-container {
+    width: 400px;
+    background-color: rgba(200, 200, 200, 0.8); /* Warna abu-abu muda dengan transparansi */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Efek transisi saat hover pada container */
+}
+
+.login-container:hover {
+    transform: scale(1.02); /* Efek membesar sedikit saat hover pada container */
+}
+
+.login-container h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Teks judul berada di tengah */
+    transition: color 0.3s ease; /* Efek transisi saat hover pada judul */
+}
+
+.login-container:hover h2 {
+    color: #000000; /* Warna judul berubah saat hover pada container */
+}
+
+.login-container label {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: block;
+    text-align: left; /* Label ada di kiri */
+    transition: color 0.3s ease; /* Efek transisi saat hover pada label */
+}
+
+.login-container:hover label {
+    color: #777; /* Warna label berubah saat hover pada container */
+}
+
+.login-container input {
+    width: calc(100% - 20px); /* Agar input field sesuai dengan ukuran kontainer */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.596); /* Transparan untuk input */
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+    border-color: #ababab; /* Fokus pada input akan memberikan efek highlight */
+}
+
+.login-container input:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Efek hover untuk input */
+}
+
+.login-container button {
+    width: 35%; /* Lebar tombol 35% dari kontainer */
+    padding: 10px; /* Padding lebih kecil */
+    background-color: #5b5b5b; /* Tombol dengan warna abu gelap */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px; /* Ukuran font tombol lebih kecil */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover smooth */
+    margin: 0 auto; /* Pusatkan tombol */
+    display: block; /* Tombol sebagai block element */
+}
+
+.login-container button:hover {
+    background-color: #232323; /* Efek hover untuk tombol */
+    transform: scale(1.05); /* Efek membesar sedikit saat hover */
+}
+
+.login-container p {
+        color: rgb(15, 15, 15); /* Warna teks */
+        font-size: 20px; /* Ukuran font */
+        text-align: center; /* Pesan error di tengah */
+        font-weight: bold; /* Menambahkan efek bold pada teks */
+}
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Mengisi ruang kontainer */
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #5b5b5b; /* Warna garis utama */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Efek putar */
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

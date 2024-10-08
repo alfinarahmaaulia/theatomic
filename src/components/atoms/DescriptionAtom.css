@@ -1,0 +1,14 @@
+/* Description Atom */
+.description {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #2D2D2D;
+  text-align: left; /* Ensure text is aligned to the left */
+}
+.contact-description {
+  padding-left: 20px;
+}
+.skills-description {
+  text-align: center;
+}

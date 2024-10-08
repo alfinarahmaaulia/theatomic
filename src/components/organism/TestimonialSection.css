@@ -1,0 +1,19 @@
+/* TestimonialSection.css */
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 24px;
+  gap: 42px;
+  width: 1280px;
+  height: auto;
+  background: #FFFFFF;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+}

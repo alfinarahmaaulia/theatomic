@@ -1,0 +1,33 @@
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 42px 24px;
+    gap: 42px;
+    width: 1280px;
+    background: #FFFFFF;
+  }
+  
+  .gallery-title {
+    width: 191px;
+    height: 42px;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    color: #2D2D2D;
+    text-align: center;
+  }
+  
+  .gallery-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Menggunakan 100% untuk mengisi ruang */
+    gap: 24px;
+  }
+  
+  .gallery-column {
+    flex: 1; /* Membuat kolom fleksibel */
+    max-width: 394.67px; /* Membatasi lebar kolom */
+  }
+  

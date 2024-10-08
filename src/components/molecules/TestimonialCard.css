@@ -1,0 +1,70 @@
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 24px;
+  gap: 42px;
+  width: 1280px;
+  background: #FFFFFF;
+}
+
+.testimonial-heading {
+  font-size: 32px;
+  line-height: 42px;
+  text-align: center;
+  font-family: 'Epilogue';
+  font-weight: 600;
+  color: #2D2D2D;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center; /* Center the cards */
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  width: 300px; /* Adjust width as needed */
+  min-height: 200px; /* Ensure all cards have a minimum height */
+  background: #F3F3F3;
+  border-radius: 8px; /* Add some rounding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.client-image-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.client-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Membuat gambar bulat */
+}
+
+.client-info-stars {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 0;
+  gap: 3px;
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+}

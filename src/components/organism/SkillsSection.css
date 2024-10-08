@@ -1,0 +1,21 @@
+.Skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 24px;
+  gap: 42px;
+  width: 1280px;
+  height: 513px;
+  background: #FFFFFF;
+  margin-top: 40px;
+}
+
+.Cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+  width: 1232px;
+  height: 429px;
+}

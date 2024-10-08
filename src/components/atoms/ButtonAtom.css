@@ -1,0 +1,63 @@
+/* Base Button Style */
+.button {
+  padding: 15px 30px;
+  background: #2D2D2D;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state for both buttons */
+.button:hover {
+  background-color: #555555;
+}
+
+/* Gaya untuk tombol submit */
+.submit-button {
+  width: 150px;
+  height: 50px;
+  background: #2D2D2D;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background: #2D2D2D;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #555555;
+}
+
+/* Gaya untuk tombol contact */
+.contact-button {
+  padding: 15px 30px;
+  background: #2D2D2D;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #555555;
+}

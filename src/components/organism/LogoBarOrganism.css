@@ -1,0 +1,28 @@
+/* Logo Bar Organism */
+.logo-bar-organism {
+  padding: 42px 24px;
+  width: 100%;
+  max-width: 1280px;
+  background: #FFFFFF;
+}
+
+/* List of Logos */
+.logo-list {
+  display: flex;
+  justify-content: space-around; /* Atur logo secara merata */
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo Item */
+.logo-item {
+  max-width: 150px; /* Atur ukuran maksimum logo */
+  height: auto; /* Sesuaikan tinggi secara proporsional */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Tambahkan transisi halus */
+}
+
+/* Hover effect untuk logo */
+.logo-item:hover {
+  transform: scale(1.1); /* Logo sedikit membesar saat di-hover */
+  filter: brightness(1.2); /* Meningkatkan kecerahan saat di-hover */
+}

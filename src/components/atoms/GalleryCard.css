@@ -1,0 +1,25 @@
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 394.67px;
+  height: 419px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 394.67px;
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  opacity: 0.8;
+}

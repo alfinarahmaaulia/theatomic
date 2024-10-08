@@ -1,0 +1,77 @@
+/* Right Side: Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  max-width: 520px;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
+/* Input Fields */
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  width: 100%;
+  max-width: 520px;
+  background: #F3F3F3;
+  border-radius: 8px; /* Sudut melengkung */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect untuk input field */
+.input-field:hover {
+  background: #EAEAEA; /* Perubahan warna saat di-hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan saat di-hover */
+}
+
+/* Input Style */
+.input {
+  width: 100%;
+  font-family: 'Epilogue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px; /* Ukuran font dibesarkan */
+  line-height: 30px;
+  color: #2D2D2D;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  background: #2D2D2D;
+  cursor: pointer;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Epilogue', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover untuk tombol submit */
+.submit-button:hover {
+  background-color: #555555;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}

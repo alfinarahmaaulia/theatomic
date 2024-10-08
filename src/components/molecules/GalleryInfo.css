@@ -1,0 +1,26 @@
+.gallery-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .gallery-title-text {
+    width: 394.67px;
+    height: 30px;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2D2D2D;
+  }
+  
+  .gallery-description {
+    width: 394.67px;
+    height: 27px;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 27px;
+    color: #2D2D2D;
+  }
+  

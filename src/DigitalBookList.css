@@ -1,0 +1,103 @@
+/* Gaya untuk kontainer daftar buku */
+.book-list {
+  padding: 20px;
+  background-color: #f9f9f9; /* Warna latar belakang yang lembut */
+  border-radius: 8px; /* Sudut yang membulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  max-width: 800px; /* Lebar maksimum */
+  margin: auto; /* Pusatkan kontainer */
+}
+
+/* Judul utama */
+.book-list h2 {
+  font-size: 24px;
+  color: #333; /* Warna teks gelap */
+  margin-bottom: 20px; /* Jarak di bawah judul */
+}
+
+/* Gaya untuk daftar buku */
+.book-list ul {
+  list-style-type: none; /* Menghilangkan bullet */
+  padding: 0; /* Menghilangkan padding default */
+}
+
+/* Gaya untuk setiap item buku */
+.book-list li {
+  padding: 15px;
+  margin-bottom: 10px; /* Jarak antar item */
+  background-color: #fff; /* Latar belakang putih */
+  border: 1px solid #ddd; /* Garis border */
+  border-radius: 5px; /* Sudut membulat */
+  transition: transform 0.2s; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk item buku */
+.book-list li:hover {
+  transform: scale(1.02); /* Membesar sedikit saat hover */
+}
+
+/* Gaya untuk judul buku */
+.book-list h3 {
+  font-size: 20px;
+  color: #007bff; /* Warna biru */
+  margin: 0; /* Menghilangkan margin default */
+}
+
+/* Gaya untuk tombol detail */
+.open-pdf-button {
+  background-color: #007bff; /* Warna biru tombol */
+  color: white; /* Warna teks putih */
+  border: none; /* Tanpa border */
+  border-radius: 5px; /* Sudut membulat */
+  padding: 10px 15px; /* Padding untuk tombol */
+  cursor: pointer; /* Tangan saat hover */
+  transition: background-color 0.3s; /* Animasi transisi */
+  font-weight: bold; /* Teks lebih tebal */
+  margin-top: 10px; /* Jarak atas untuk tombol */
+}
+
+/* Gaya untuk tombol detail saat hover */
+.open-pdf-button:hover {
+  background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+/* Gaya untuk pesan kesalahan */
+.error-message {
+  color: red; /* Warna merah untuk pesan kesalahan */
+  margin-top: 10px; /* Jarak atas */
+}
+
+/* Gaya untuk pratinjau PDF */
+.pdf-preview {
+  margin-top: 20px; /* Jarak atas untuk pratinjau */
+  background-color: #f0f0f0; /* Latar belakang abu-abu muda */
+  padding: 15px; /* Padding di dalam pratinjau */
+  border-radius: 5px; /* Sudut membulat */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/* Gaya untuk judul pratinjau buku */
+.pdf-preview h3 {
+  margin: 0; /* Menghilangkan margin default */
+}
+
+/* Gaya untuk kontrol PDF */
+.pdf-controls {
+  margin-top: 10px; /* Jarak atas untuk kontrol */
+}
+
+/* Gaya untuk tombol download */
+.download-button {
+  background-color: #28a745; /* Warna hijau tombol */
+  color: white; /* Warna teks putih */
+  border: none; /* Tanpa border */
+  border-radius: 5px; /* Sudut membulat */
+  padding: 10px 15px; /* Padding untuk tombol */
+  cursor: pointer; /* Tangan saat hover */
+  transition: background-color 0.3s; /* Animasi transisi */
+}
+
+/* Gaya untuk tombol download saat hover */
+.download-button:hover {
+  background-color: #218838; /* Warna lebih gelap saat hover */
+}

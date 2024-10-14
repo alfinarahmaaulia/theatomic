@@ -1,0 +1,208 @@
+/* Container utama untuk halaman sektoral */
+.sektoral-container {
+  display: flex;
+  justify-content: center; /* Menempatkan isi container di tengah secara horizontal */
+  align-items: flex-start; /* Menempatkan isi container di atas secara vertikal */
+  min-height: 10vh; /* Mengatur container agar memiliki tinggi minimum sebesar tinggi layar */
+  background-color: #ffffff; /* Memberikan warna latar belakang putih */
+  padding: 20px; /* Memberikan ruang di sekitar container */
+}
+
+/* Kotak utama tempat form dan hasil pencarian */
+.sektoral-box {
+  width: 100%; /* Mengatur lebar kotak mengikuti lebar container */
+  max-width: 1000px; /* Membatasi lebar maksimal kotak agar tidak terlalu lebar */
+  background-color: rgba(198, 198, 198, 0.473); /* Memberikan warna latar belakang putih pada kotak */
+  padding: 20px; /* Memberikan ruang di dalam kotak */
+  border-radius: 15px; /* Membuat sudut kotak menjadi melengkung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan lembut pada kotak */
+}
+
+/* Judul utama */
+.sektoral-title {
+  font-size: 24px; /* Mengatur ukuran font untuk judul */
+  font-weight: bold; /* Menebalkan teks judul */
+  text-align: center; /* Menempatkan judul di tengah */
+  margin-bottom: 20px; /* Memberikan jarak di bawah judul */
+}
+
+/* Form pencarian */
+.sektoral-form {
+  display: flex; /* Menampilkan form dalam layout fleksibel */
+  align-items: center; /* Menjaga elemen input dan tombol sejajar secara vertikal */
+  justify-content: center; /* Menempatkan elemen dalam form di tengah secara horizontal */
+  gap: 10px; /* Menambahkan jarak antar elemen di dalam form */
+  flex-wrap: wrap; /* Memungkinkan elemen untuk membungkus jika layar kecil */
+  margin-bottom: 20px; /* Memberikan jarak di bawah form */
+}
+
+/* Input dalam form */
+.sektoral-input {
+  padding: 10px; /* Memberikan ruang di dalam input */
+  border: 1px solid #ccc; /* Menambahkan border abu-abu pada input */
+  border-radius: 4px; /* Membuat sudut input melengkung */
+  max-width: 200px; /* Membatasi lebar input agar proporsional */
+  flex-grow: 1; /* Membuat input dapat meluas mengikuti ukuran container */
+  text-align: left; /* Menempatkan teks di tengah dalam input */
+}
+
+/* Tombol Cari */
+.sektoral-button {
+  background-color: #6b6b6c; /* Warna latar belakang tombol */
+  color: white; /* Warna teks tombol putih */
+  padding: 12px; /* Menyederhanakan padding untuk tampilan yang lebih ramping */
+  border: none; /* Menghilangkan border tombol */
+  border-radius: 8px; /* Membuat sudut tombol menjadi lebih halus */
+  cursor: pointer; /* Menampilkan pointer saat hover tombol */
+  display: flex; /* Mengatur layout tombol fleksibel */
+  align-items: center; /* Menjaga konten tombol sejajar secara vertikal */
+  justify-content: center; /* Menempatkan konten di tengah secara horizontal */
+  height: 42px; /* Mengatur tinggi tombol agar konsisten dengan input */
+  width: 55px; /* Mengatur lebar tombol agar berbentuk kotak */
+  font-weight: bold; /* Menebalkan teks tombol */
+  transition: background-color 0.3s, transform 0.2s; /* Menambahkan efek transisi */
+}
+
+/* Ikon dalam tombol */
+.sektoral-button i {
+  margin: 0; /* Menghilangkan margin pada ikon */
+  font-size: 16px; /* Ukuran ikon untuk menjaga proporsi */
+}
+
+/* Efek hover dan active untuk tombol */
+.sektoral-button:hover {
+  background-color: #353536; /* Mengubah warna tombol saat di-hover menjadi lebih gelap */
+  transform: translateY(-1px); /* Efek mengangkat sedikit saat hover */
+}
+
+.sektoral-button:active {
+  transform: translateY(1px); /* Efek menekan tombol saat ditekan */
+}
+
+/* Pesan error */
+.error-message {
+  color: red; /* Warna teks error merah */
+  text-align: center; /* Menempatkan teks error di tengah */
+  margin-top: 10px; /* Memberikan jarak di atas pesan error */
+}
+
+/* Tabel hasil pencarian */
+.result-table {
+  width: 100%; /* Mengatur lebar tabel mengikuti lebar container */
+  border-collapse: collapse; /* Menghilangkan jarak antar border pada tabel */
+  margin-top: 20px; /* Memberikan jarak di atas tabel */
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.result-table th,
+.result-table td {
+  padding: 12px; /* Memberikan ruang di dalam sel tabel */
+  border-bottom: 1px solid #878686; /* Menambahkan garis bawah pada sel */
+  text-align: left; /* Mengatur teks dalam sel agar rata kiri */
+}
+
+.result-table th {
+  background-color: #444444; /* Warna latar belakang header tabel */
+  color: white; /* Warna teks header putih */
+}
+
+.result-table tr:hover {
+  background-color: #f1f1f1; /* Warna latar belakang baris tabel saat di-hover */
+}
+
+/* Teks loading */
+.loading-text {
+  text-align: center; /* Menempatkan teks loading di tengah */
+  font-size: 18px; /* Mengatur ukuran font teks loading */
+  color: #666; /* Warna teks loading abu-abu gelap */
+}
+
+/* Container untuk pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pindahkan tombol ke pinggir */
+  margin-top: 10px;
+}
+
+/* Teks Page X of Y */
+.pagination-text {
+  font-weight: bold;
+  margin: 0 auto; /* Agar teks berada di tengah */
+  font-size: 16px;
+}
+
+/* Tombol pagination */
+.pagination-button {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 14px;
+}
+
+/* Tombol saat aktif */
+.pagination-button.active {
+  background-color: #6b6b6c;
+  color: white;
+  border-color: #6b6b6c;
+}
+
+/* Tombol Previous dan Next saat dinonaktifkan */
+.pagination-button:disabled {
+  background-color: #eaeaea;
+  color: #999;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Mengatur tombol Previous di kiri */
+.prev-button {
+  margin-right: auto;
+}
+
+/* Mengatur tombol Next di kanan */
+.next-button {
+  margin-left: auto;
+}
+
+/* Tambahkan gaya untuk react-select */
+.react-select-container {
+  flex-grow: 1;
+  max-width: 200px;
+}
+
+.react-select__control {
+  border-color: #ccc;
+  border-radius: 4px;
+}
+
+.react-select__control--is-focused {
+  border-color: #6b6b6c;
+  box-shadow: 0 0 0 1px #6b6b6c;
+}
+
+.react-select__menu {
+  z-index: 9999; /* Pastikan menu dropdown berada di atas elemen lainnya */
+}
+
+.react-select__option--is-focused {
+  background-color: #ddd;
+}
+
+.react-select__option--is-selected {
+  background-color: #6b6b6c;
+  color: white;
+}
+
+/* Responsif: Mengurangi ukuran tombol pada layar kecil */
+@media (max-width: 600px) {
+  .pagination-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

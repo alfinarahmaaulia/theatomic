@@ -21,7 +21,7 @@ body {
   padding-top: 70px !important; /* Adjust based on navbar height */
 }
 
-/* Logo */
+/* Logo & NavbarBrand styling */
 .navbar-brand {
   display: flex !important;
   align-items: center !important;
@@ -36,37 +36,32 @@ body {
   margin-right: 10px !important;
 }
 
-/* Menu Items */
-.navbar-nav {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: flex-end !important;
-  align-items: center !important;
+/* Button styles for the brand */
+.navbar-brand-button {
+  background-color: #D3D3D3;
+  color: #2D2D2D;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.nav-item {
-  margin-left: 24px !important;
+.navbar-brand-button:hover {
+  background-color: #B0B0B0;
+  cursor: pointer;
 }
 
-.nav-link {
-  font-family: 'Epilogue', sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 17px !important;
-  color: #2D2D2D !important;
-  text-decoration: none !important;
-}
-
-.nav-link:hover {
-  color: #61dafb !important;
+.navbar-brand-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(45, 45, 45, 0.6);
 }
 
 /* Responsive fixes */
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 20px !important;
-  }
-
-  .navbar-nav {
-    justify-content: center !important;
   }
 }

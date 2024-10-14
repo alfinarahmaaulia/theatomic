@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { login } from './authService';
+import { login } from '../authService';
 import './Login.css';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Login = ({ onLoginSuccess }) => {
   const [nip, setNip] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Inisialisasi useNavigate
 
   const handleLogin = async () => {
     setLoading(true);
@@ -16,8 +18,7 @@ const Login = ({ onLoginSuccess }) => {
       const result = await login(nip, password);
       if (result.token) {
         onLoginSuccess(); // Panggil fungsi untuk mengubah status otentikasi
-        // Anda juga bisa mengarahkan pengguna ke Home setelah login berhasil
-        // history.push('/'); jika menggunakan useHistory dari react-router-dom
+        navigate('/halaman-yang-belum-ada'); // Arahkan pengguna ke halaman Not Found setelah login berhasil
       }
     } catch (error) {
       setError('Login gagal. Silakan periksa kembali kredensial Anda.');
@@ -25,14 +26,13 @@ const Login = ({ onLoginSuccess }) => {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="login-wrapper">
       <div className="login-container">
         {loading ? (
           <div className="loading-container">
-            <div className="spinner"></div> {/* Titik-titik berputar */}
+            <div className="spinner"></div>
             <p>Sabar...</p>
           </div>
         ) : (

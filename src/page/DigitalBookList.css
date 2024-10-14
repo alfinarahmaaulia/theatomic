@@ -1,7 +1,7 @@
 /* Gaya untuk kontainer daftar buku */
 .book-list {
   padding: 20px;
-  background-color: #f9f9f9; /* Warna latar belakang yang lembut */
+  background-color: rgba(198, 198, 198, 0.473); /* Warna latar belakang yang lembut */
   border-radius: 8px; /* Sudut yang membulat */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
   max-width: 800px; /* Lebar maksimum */
@@ -11,7 +11,9 @@
 /* Judul utama */
 .book-list h2 {
   font-size: 24px;
-  color: #333; /* Warna teks gelap */
+  color: #000000; /* Warna teks gelap */
+  text-align: center;
+  font-weight: bold;
   margin-bottom: 20px; /* Jarak di bawah judul */
 }
 
@@ -25,9 +27,9 @@
 .book-list li {
   padding: 15px;
   margin-bottom: 10px; /* Jarak antar item */
-  background-color: #fff; /* Latar belakang putih */
+  background-color: #ffffffc9; /* Latar belakang putih */
   border: 1px solid #ddd; /* Garis border */
-  border-radius: 5px; /* Sudut membulat */
+  border-radius: 10px; /* Sudut membulat */
   transition: transform 0.2s; /* Efek transisi saat hover */
 }
 
@@ -39,16 +41,16 @@
 /* Gaya untuk judul buku */
 .book-list h3 {
   font-size: 20px;
-  color: #007bff; /* Warna biru */
+  color: #000000; /* Warna biru */
   margin: 0; /* Menghilangkan margin default */
 }
 
 /* Gaya untuk tombol detail */
 .open-pdf-button {
-  background-color: #007bff; /* Warna biru tombol */
+  background-color: #404243; /* Warna biru tombol */
   color: white; /* Warna teks putih */
   border: none; /* Tanpa border */
-  border-radius: 5px; /* Sudut membulat */
+  border-radius: 10px; /* Sudut membulat */
   padding: 10px 15px; /* Padding untuk tombol */
   cursor: pointer; /* Tangan saat hover */
   transition: background-color 0.3s; /* Animasi transisi */
@@ -58,7 +60,7 @@
 
 /* Gaya untuk tombol detail saat hover */
 .open-pdf-button:hover {
-  background-color: #0056b3; /* Warna lebih gelap saat hover */
+  background-color: #525558; /* Warna lebih gelap saat hover */
 }
 
 /* Gaya untuk pesan kesalahan */
@@ -84,20 +86,4 @@
 /* Gaya untuk kontrol PDF */
 .pdf-controls {
   margin-top: 10px; /* Jarak atas untuk kontrol */
-}
-
-/* Gaya untuk tombol download */
-.download-button {
-  background-color: #28a745; /* Warna hijau tombol */
-  color: white; /* Warna teks putih */
-  border: none; /* Tanpa border */
-  border-radius: 5px; /* Sudut membulat */
-  padding: 10px 15px; /* Padding untuk tombol */
-  cursor: pointer; /* Tangan saat hover */
-  transition: background-color 0.3s; /* Animasi transisi */
-}
-
-/* Gaya untuk tombol download saat hover */
-.download-button:hover {
-  background-color: #218838; /* Warna lebih gelap saat hover */
 }

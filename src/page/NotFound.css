@@ -1,0 +1,31 @@
+.not-found-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100vh !important;
+  text-align: center !important;
+  font-family: 'Arial', sans-serif !important;
+}
+
+.not-found-icon {
+  font-size: 48px !important;
+  color: #ba1a1a !important;
+  margin-bottom: 20px !important;
+}
+
+/* Tombol kembali ke halaman utama */
+.back-to-home-button {
+  margin-top: 20px !important; /* Jarak antara teks dan tombol */
+  padding: 10px 20px !important;
+  background-color: #878686 !important; /* Warna latar belakang biru */
+  color: white !important;
+  text-decoration: none !important; /* Hilangkan garis bawah pada link */
+  border-radius: 5px !important; /* Membuat tombol sudut melengkung */
+  font-size: 16px !important;
+  transition: background-color 0.3s ease !important; /* Transisi halus */
+}
+
+.back-to-home-button:hover {
+  background-color: #bfbfbf !important; /* Warna latar belakang saat hover */
+}

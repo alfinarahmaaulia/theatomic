@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './DigitalBookList.css'; // Impor CSS
 import { Document, Page, pdfjs } from 'react-pdf';
 import axios from 'axios';
-import NavbarComponent from './components/organism/NavbarComponent';
 
 // Set workerSrc untuk pdf.js
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`; // Versi PDF.js worker
@@ -54,7 +53,6 @@ const DigitalBookList = () => {
 
   return (
     <div className="book-list">
-      <NavbarComponent />
       <h2>Daftar Buku Digital</h2>
       {error && <p className="error-message">{error}</p>}
 

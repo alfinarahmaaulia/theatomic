@@ -1,0 +1,63 @@
+/* Specific styles for NavLinksGroup */
+.navbar-nav-custom {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.nav-link-custom {
+    font-family: 'Epilogue', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: #2D2D2D !important;
+    text-decoration: none !important;
+    padding: 8px 16px !important;
+    transition: color 0.3s ease, background-color 0.3s ease !important;
+}
+
+/* Gaya untuk tautan yang aktif */
+.nav-link-custom.active {
+    color: #848988 !important; /* Warna ketika tautan aktif */
+}
+
+.nav-link-custom:hover {
+    color: #848988 !important;
+}
+
+/* Button for login */
+.login-button-custom {
+    background-color: #3f3f3f !important;
+    color: #ffffff !important;
+    font-family: 'Epilogue', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    padding: 8px 16px !important;
+    border: none !important;
+    border-radius: 12px !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+/* Gaya untuk tautan Login yang aktif */
+.login-button-custom.active {
+    background-color: #8a8a8a !important; /* Ganti warna saat aktif jika perlu */
+    color: white !important; /* Warna teks saat aktif */
+}
+
+.login-button-custom:hover {
+    background-color: #7e7d7d !important;
+    color: white !important;
+    cursor: pointer !important;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar-nav-custom {
+        justify-content: center !important;
+    }
+
+    .login-button-custom {
+        padding: 12px 20px !important;
+        border-radius: 24px !important;
+    }
+}

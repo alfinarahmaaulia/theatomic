@@ -1,12 +1,13 @@
-/* Login.css */
+
 .login-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Menggeser kontainer login ke atas */
     height: 100vh;
     background-image: url('https://griffithobservatory.org/wp-content/uploads/2021/12/moon_phases_no_text-1600x800.jpg'); /* Menambahkan gambar background */
     background-size: cover; /* Mengatur ukuran background agar menutupi seluruh area */
     background-position: center; /* Memposisikan gambar di tengah */
+    padding-top: 20px; /* Menambahkan sedikit padding atas jika perlu */
 }
 
 .login-container {

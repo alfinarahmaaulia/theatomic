@@ -6,6 +6,7 @@ import { getToken, logout } from './authService';
 import NavbarComponent from './components/organism/NavbarComponent';
 import Login from './page/Login';
 import Sektoral from './page/Sektoral';
+import Dataset from './page/Dataset';
 import NotFound from './page/NotFound'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -42,6 +43,7 @@ const App = () => {
       <Routes>
         <Route path="/DigitalBookList" element={<DigitalBookList />} />
         <Route path="/sektoral" element={<Sektoral />} />
+        <Route path="/dataset" element={<Dataset />} />
         <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
         <Route path="/" element={isAuthenticated ? <Home /> : <Login onLoginSuccess={handleLoginSuccess} />} />
         <Route path="/halaman-yang-belum-ada" element={<NotFound />} />

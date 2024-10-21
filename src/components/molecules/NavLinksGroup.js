@@ -25,6 +25,12 @@ const NavLinksGroup = () => {
         Buku Digital
       </NavLink>
       <NavLink 
+        to="/dataset" 
+        className={({ isActive }) => `nav-link-custom ${isActive ? 'active' : ''}`}
+      >
+        Dataset
+      </NavLink>
+      <NavLink 
         to="/Login" 
         className={({ isActive }) => `btn login-button-custom ${isActive ? 'active' : ''}`}
       >

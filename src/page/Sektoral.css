@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center; /* Menempatkan isi container di tengah secara horizontal */
   align-items: flex-start; /* Menempatkan isi container di atas secara vertikal */
-  min-height: 10vh; /* Mengatur container agar memiliki tinggi minimum sebesar tinggi layar */
+  min-height: 100vh; /* Mengatur container agar memiliki tinggi minimum sebesar tinggi layar */
   background-color: #ffffff; /* Memberikan warna latar belakang putih */
   padding: 20px; /* Memberikan ruang di sekitar container */
 }
@@ -12,10 +12,10 @@
 .sektoral-box {
   width: 100%; /* Mengatur lebar kotak mengikuti lebar container */
   max-width: 1000px; /* Membatasi lebar maksimal kotak agar tidak terlalu lebar */
-  background-color: rgba(198, 198, 198, 0.473); /* Memberikan warna latar belakang putih pada kotak */
+  background-color: rgb(255, 255, 255); /* Memberikan warna latar belakang */
   padding: 20px; /* Memberikan ruang di dalam kotak */
   border-radius: 15px; /* Membuat sudut kotak menjadi melengkung */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan lembut pada kotak */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan lembut pada kotak */
 }
 
 /* Judul utama */
@@ -39,11 +39,11 @@
 /* Input dalam form */
 .sektoral-input {
   padding: 10px; /* Memberikan ruang di dalam input */
-  border: 1px solid #ccc; /* Menambahkan border abu-abu pada input */
+  border: 1px solid #d5d5d5; /* Menambahkan border abu-abu pada input */
   border-radius: 4px; /* Membuat sudut input melengkung */
   max-width: 200px; /* Membatasi lebar input agar proporsional */
   flex-grow: 1; /* Membuat input dapat meluas mengikuti ukuran container */
-  text-align: left; /* Menempatkan teks di tengah dalam input */
+  text-align: left; /* Menempatkan teks di kiri dalam input */
 }
 
 /* Tombol Cari */
@@ -57,8 +57,8 @@
   display: flex; /* Mengatur layout tombol fleksibel */
   align-items: center; /* Menjaga konten tombol sejajar secara vertikal */
   justify-content: center; /* Menempatkan konten di tengah secara horizontal */
-  height: 42px; /* Mengatur tinggi tombol agar konsisten dengan input */
-  width: 55px; /* Mengatur lebar tombol agar berbentuk kotak */
+  height: 40px; /* Mengatur tinggi tombol agar lebih pendek */
+  width: 90px; /* Mengatur lebar tombol agar lebih lebar */
   font-weight: bold; /* Menebalkan teks tombol */
   transition: background-color 0.3s, transform 0.2s; /* Menambahkan efek transisi */
 }
@@ -86,123 +86,98 @@
   margin-top: 10px; /* Memberikan jarak di atas pesan error */
 }
 
-/* Tabel hasil pencarian */
+/* Styling untuk kontainer tabel agar responsif */
 .result-table {
-  width: 100%; /* Mengatur lebar tabel mengikuti lebar container */
-  border-collapse: collapse; /* Menghilangkan jarak antar border pada tabel */
-  margin-top: 20px; /* Memberikan jarak di atas tabel */
-  text-align: center;
-  background-color: #ffffff;
+  width: 100%;
+  max-width: 100%; /* Batas maksimal sesuai dengan kontainer */
+  overflow-x: auto; /* Untuk menangani tabel yang melebihi lebar layar */
+  margin-top: 20px;
 }
 
-.result-table th,
-.result-table td {
-  padding: 12px; /* Memberikan ruang di dalam sel tabel */
-  border-bottom: 1px solid #878686; /* Menambahkan garis bawah pada sel */
-  text-align: left; /* Mengatur teks dalam sel agar rata kiri */
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Mengatur tabel agar kolom menyesuaikan lebar konten */
+}
+
+.result-table th, .result-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: black; /* Mengubah warna teks judul tabel menjadi putih */
+  
 }
 
 .result-table th {
-  background-color: #444444; /* Warna latar belakang header tabel */
-  color: white; /* Warna teks header putih */
+  background-color: #6a6a6a;
+  font-weight: bold;
 }
 
-.result-table tr:hover {
-  background-color: #f1f1f1; /* Warna latar belakang baris tabel saat di-hover */
+.result-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-/* Teks loading */
-.loading-text {
-  text-align: center; /* Menempatkan teks loading di tengah */
-  font-size: 18px; /* Mengatur ukuran font teks loading */
-  color: #666; /* Warna teks loading abu-abu gelap */
+.result-table tbody tr:hover {
+  background-color: #f1f1f1;
 }
 
-/* Container untuk pagination */
+/* Pagination buttons */
 .pagination {
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Pindahkan tombol ke pinggir */
-  margin-top: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-/* Teks Page X of Y */
-.pagination-text {
-  font-weight: bold;
-  margin: 0 auto; /* Agar teks berada di tengah */
+.pagination button {
+  padding: 8px 12px;
+  background-color: #4b4c4c;
+  color: rgb(18, 18, 18);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+}
+
+.pagination p {
+  margin: 0;
+  padding: 0;
   font-size: 16px;
 }
 
-/* Tombol pagination */
-.pagination-button {
-  background-color: #f1f1f1;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 14px;
-}
-
-/* Tombol saat aktif */
-.pagination-button.active {
-  background-color: #6b6b6c;
-  color: white;
-  border-color: #6b6b6c;
-}
-
-/* Tombol Previous dan Next saat dinonaktifkan */
-.pagination-button:disabled {
-  background-color: #eaeaea;
-  color: #999;
-  border-color: #ddd;
-  cursor: not-allowed;
-}
-
-/* Mengatur tombol Previous di kiri */
-.prev-button {
-  margin-right: auto;
-}
-
-/* Mengatur tombol Next di kanan */
-.next-button {
-  margin-left: auto;
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .result-table table {
+    font-size: 12px; /* Ubah ukuran font agar tabel tetap terbaca */
+  }
 }
 
 /* Tambahkan gaya untuk react-select */
 .react-select-container {
-  flex-grow: 1;
-  max-width: 200px;
-}
+  border: none; /* Menghilangkan bingkai */
+   }
 
 .react-select__control {
-  border-color: #ccc;
-  border-radius: 4px;
-}
+  box-shadow: none; /* Menghilangkan bayangan */
+  border: none; /* Menghilangkan border */
+  padding: 3px; /* Sama dengan padding pada input lainnya */
 
-.react-select__control--is-focused {
-  border-color: #6b6b6c;
-  box-shadow: 0 0 0 1px #6b6b6c;
-}
-
-.react-select__menu {
-  z-index: 9999; /* Pastikan menu dropdown berada di atas elemen lainnya */
-}
-
-.react-select__option--is-focused {
-  background-color: #ddd;
-}
-
-.react-select__option--is-selected {
-  background-color: #6b6b6c;
-  color: white;
-}
-
-/* Responsif: Mengurangi ukuran tombol pada layar kecil */
-@media (max-width: 600px) {
-  .pagination-button {
-    padding: 6px 10px;
-    font-size: 12px;
   }
+  /* Tambahkan gaya untuk react-select saat di-hover */
+.react-select__control:hover {
+  background-color: #d6d6d6; /* Ganti dengan warna latar belakang yang diinginkan saat di-hover */
+  border: 1px solid #aaa; /* Ganti dengan warna border yang diinginkan saat di-hover */
+}
+.data-info-container {
+  display: flex;
+  justify-content: space-between; /* Total halaman di kiri dan total data di kanan */
+  margin-bottom: 10px; /* Memberikan jarak di bawah elemen */
+}
+
+.data-info-container p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
 }

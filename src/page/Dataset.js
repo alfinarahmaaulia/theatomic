@@ -106,9 +106,10 @@ const Dataset = () => {
     <div className="dataset-container">
       {loading ? (
         <p>Loading...</p>
-      ) : error ? (
+      ) :   (
         <p className="error-message">{error}</p>
-      ) : selectedDataset ? (
+      ) }
+      {selectedDataset ? (
         <div className="dataset-detail">
           <div className="back-button" onClick={handleBackToList}>
             <i className="fas fa-arrow-left"></i> Kembali

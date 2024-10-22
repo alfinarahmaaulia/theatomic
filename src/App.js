@@ -45,7 +45,7 @@ const App = () => {
         <Route path="/sektoral" element={<Sektoral />} />
         <Route path="/dataset" element={<Dataset />} />
         <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-        <Route path="/" element={isAuthenticated ? <Home /> : <Login onLoginSuccess={handleLoginSuccess} />} />
+        <Route path="/" element={ <Home /> } />
         <Route path="/halaman-yang-belum-ada" element={<NotFound />} />
         <Route path="*" element={<NotFound />} /> {/* Rute 404 */}
       </Routes>

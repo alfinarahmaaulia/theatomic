@@ -1,53 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Select from 'react-select'; // Import React Select
-import './Dataset.css'; // CSS file for styling
+import './Dataset.css'; // File CSS untuk styling
+
+// Fungsi untuk menghitung selisih hari
+const calculateDaysAgo = (modifiedDate) => {
+  const today = new Date();
+  const modified = new Date(modifiedDate);
+  const timeDifference = today - modified;
+  const daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Menghitung selisih hari
+  return daysAgo;
+};
 
 const Dataset = () => {
-  const [datasets, setDatasets] = useState([]); // State untuk menyimpan dataset
-  const [loading, setLoading] = useState(true); // State untuk loading status
-  const [error, setError] = useState(null); // State untuk error handling
-  const [selectedDataset, setSelectedDataset] = useState(null); // State untuk dataset terpilih
-  const [opds, setOpds] = useState([]); // State untuk daftar OPD
-  const [selectedOpd, setSelectedOpd] = useState(''); // State untuk OPD terpilih
+  const [datasets, setDatasets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedDataset, setSelectedDataset] = useState(null);
+  const [producers, setProducers] = useState([]);
+  const [filteredProducers, setFilteredProducers] = useState([]);
+  const [searchProducer, setSearchProducer] = useState('');
+  const [selectedProducer, setSelectedProducer] = useState('');
 
-  // Fetch datasets on component mount
+  // Fetch datasets from API
   useEffect(() => {
     const fetchDatasets = async () => {
-      setLoading(true); // Set loading ke true
       try {
-        const response = await axios.get('http://116.206.212.234:4000/dataset', {
-          params: {
-            opd: selectedOpd // Filter berdasarkan OPD jika ada
-          }
-        });
-        setDatasets(response.data); // Simpan dataset yang diambil
-        setError(null); // Reset error jika sukses
+        const response = await axios.get('http://116.206.212.234:4000/dataset');
+        setDatasets(response.data);
+        setError(null);
       } catch (err) {
-        setError('Failed to fetch datasets'); // Set error message
+        setError('Failed to fetch datasets');
       } finally {
-        setLoading(false); // Set loading ke false
+        setLoading(false);
       }
     };
-    fetchDatasets(); // Panggil fetch dataset saat component mount atau selectedOpd berubah
-  }, [selectedOpd]);
+    fetchDatasets();
+  }, []);
 
-  // Fetch OPD list on component mount
+  // Fetch producers from API
   useEffect(() => {
-    const fetchOpds = async () => {
+    const fetchProducers = async () => {
       try {
         const response = await axios.get('http://116.206.212.234:4000/list-opd');
-        const opdOptions = response.data.map(opd => ({
-          value: opd.nama_opd, // Set value untuk option
-          label: opd.nama_opd,  // Label yang ditampilkan di dropdown
+        const producersData = response.data.map((producer) => ({
+          id: producer.id,
+          nama_opd: producer.nama_opd,
         }));
-        setOpds(opdOptions); // Simpan data OPD ke format yang sesuai untuk React Select
-        setError(null); // Reset error jika sukses
+        setProducers(producersData);
+        setFilteredProducers(producersData);
+        setError(null);
       } catch (err) {
-        setError('Failed to fetch OPD list'); // Set error jika gagal
+        setError('Failed to fetch producers');
       }
     };
-    fetchOpds(); // Panggil fetch OPD saat component mount
+    fetchProducers();
   }, []);
 
   // Fetch dataset details when an item is clicked
@@ -64,79 +70,113 @@ const Dataset = () => {
     }
   };
 
-  // Handle filter change (when OPD is selected)
-  const handleOpdChange = (selectedOption) => {
-    setSelectedOpd(selectedOption ? selectedOption.value : ''); // Set OPD terpilih atau kosongkan jika tidak ada
+  // Filter dataset by selected producer
+  const filteredDatasets = selectedProducer
+    ? datasets.filter((dataset) => dataset.nama_opd === selectedProducer)
+    : datasets;
+
+  // Update producer filter based on search input
+  const handleProducerSearch = (e) => {
+    const inputValue = e.target.value;
+    setSearchProducer(inputValue);
+
+    if (inputValue === '') {
+      setFilteredProducers(producers);
+      setSelectedProducer('');
+    } else {
+      const searchResults = producers.filter((producer) =>
+        producer.nama_opd.toLowerCase().includes(inputValue.toLowerCase())
+      );
+      setFilteredProducers(searchResults);
+    }
   };
 
-  // Back to dataset list
+  // Handle when a producer is selected from the column
+  const handleProducerClick = (producer) => {
+    setSelectedProducer(producer.nama_opd);
+    setSearchProducer(producer.nama_opd);
+  };
+
+  // Go back to dataset list
   const handleBackToList = () => {
-    setSelectedDataset(null); // Kembali ke daftar dataset
+    setSelectedDataset(null);
   };
 
   return (
     <div className="dataset-container">
-      <div className="dataset-layout">
-        {/* Filter box for OPD */}
-        <div className="filter-box">
-          <h3>Produsen Dataset</h3>
-          {loading ? (
-            <p>Loading Dataset list...</p>
-          ) : error ? (
-            <p className="error-message">{error}</p>
-          ) : (
-            <Select
-              className="producer-filter"
-              options={opds}  // Pilihan OPD yang sudah diformat
-              isClearable={true} // Opsi untuk mengosongkan pilihan
-              placeholder="Cari Produsen Dataset..."
-              onChange={handleOpdChange} // Handle ketika OPD dipilih
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p className="error-message">{error}</p>
+      ) : selectedDataset ? (
+        <div className="dataset-detail">
+          <div className="back-button" onClick={handleBackToList}>
+            <i className="fas fa-arrow-left"></i> Kembali
+          </div>
+          <h3>Details for: {selectedDataset.title}</h3>
+          <p><strong>Uraian:</strong> {selectedDataset.uraian_dssd}</p>
+          <p><strong>Kode DSSD:</strong> {selectedDataset.kode_dssd}</p> {/* Menambahkan Kode DSSD */}
+          <p><strong>Description:</strong> {selectedDataset.description}</p>
+          <p><strong>OPD:</strong> {selectedDataset.nama_opd}</p>
+          <p><strong>Jenis:</strong> {selectedDataset.jenis_string}</p>
+          <p><strong>Kategori:</strong> {selectedDataset.kategori_string}</p>
+          <p><strong>Satuan:</strong> {selectedDataset.satuan}</p> {/* Menambahkan Satuan */}
+          <a href={selectedDataset.download_url} target="_blank" rel="noopener noreferrer" className="download-link">
+            Download Dataset
+          </a>
+        </div>
+      ) : (
+        <div className="dataset-layout">
+          <div className="filter-box">
+            <h3>Produsen Dataset</h3>
+            <input
+              type="text"
+              value={searchProducer}
+              onChange={handleProducerSearch}
+              placeholder="Cari produsen..."
+              className="producer-search"
             />
-          )}
-        </div>
-
-        {/* Dataset list or details */}
-        <div className="dataset-list">
-          {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <p className="error-message">{error}</p>
-          ) : selectedDataset ? (
-            <div className="dataset-detail">
-              <div className="back-button" onClick={handleBackToList}>
-                <i className="fas fa-arrow-left"></i> Kembali
-              </div>
-              <h3>Details for: {selectedDataset.title}</h3>
-              <p><strong>Uraian:</strong> {selectedDataset.uraian_dssd}</p>
-              <p><strong>Description:</strong> {selectedDataset.description}</p>
-              <p><strong>OPD:</strong> {selectedDataset.nama_opd}</p>
-              <p><strong>Jenis:</strong> {selectedDataset.jenis_string}</p>
-              <p><strong>Kategori:</strong> {selectedDataset.kategori_string}</p>
-              <a href={selectedDataset.download_url} target="_blank" rel="noopener noreferrer" className="download-link">
-                Download Dataset
-              </a>
+            <div className="producer-columns">
+              {filteredProducers.map((producer) => (
+                <div
+                  key={producer.id}
+                  className="producer-column"
+                  onClick={() => handleProducerClick(producer)}
+                >
+                  <span>{producer.nama_opd}</span>
+                </div>
+              ))}
             </div>
-          ) : (
-            <>
-              <h2>Dataset List</h2>
-              <ul>
-                {datasets.map((dataset) => (
-                  <li
-                    key={dataset.id}
-                    className="dataset-item"
-                    onClick={() => handleItemClick(dataset.id)}
-                  >
-                    <img src="/data1.png.png" alt="Data Icon" className="data-icon" />
-                    <h3>{dataset.uraian_dssd}</h3>
-                    <p>OPD: {dataset.nama_opd}</p>
-                    <p>Modified: {new Date(dataset.modified).toLocaleDateString()}</p>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
+          </div>
+
+          <div className="dataset-list">
+            <h2>Dataset List</h2>
+            <ul>
+  {filteredDatasets.map((dataset) => (
+    <li
+      key={dataset.id}
+      className="dataset-item"
+      onClick={() => handleItemClick(dataset.id)}
+    >
+      <img src="/data.png" alt="Data Icon" className="data-icon" />
+      <div className="dataset-details">
+        <h3>{dataset.uraian_dssd}</h3>
+        <p className="dataset-description">{dataset.description}</p>
+        <p className="dataset-meta">
+          <span className="opd"><strong>OPD:</strong> {dataset.nama_opd}</span>
+          <span className="modified">
+            <strong>Modified:</strong> {new Date(dataset.modified).toLocaleString()} 
+            {' '}({calculateDaysAgo(dataset.modified)} days ago)
+          </span>
+        </p>
       </div>
+    </li>
+  ))}
+</ul>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 };

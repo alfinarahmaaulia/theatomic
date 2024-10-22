@@ -58,6 +58,7 @@ const Dataset = () => {
       setSelectedDataset(response.data);
       setError(null);
     } catch (err) {
+      //set eror jika gagal
       setError('Failed to fetch dataset details');
     } finally {
       setLoading(false);
